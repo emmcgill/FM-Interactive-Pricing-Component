@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Interactive pricing component</title>
+  </head>
+  <body>
+    <div id="background"></div>
+    <main>
+      <div class="component-title">
+        <h1>Simple, traffic-based pricing</h1>
+        <p>Sign-up for our 30-day trial. No credit card required.</p>
+      </div>
+      <div class="component">
+
+        <section id="pricing">
+            <p id="page-views"><span id="total">10K</span> Pageviews</p>
+            <div class="range-wrapper">
+              <span class="bar"><span class="fill"></span></span>
+              <input type="range" value="0" min="0" max="100" id="slider" oninput="setBar()">
+            </div>
+            <p id="monthly-amount"><span>$</span><span id="amount">8.00</span> / month</p>
+          <div class="billing">
+            <div class="monthly">
+              <p class="label">Monthly Billing</p>
+              <div class="toggle-container">
+                <div class="toggle one checked"></div>
+                <div class="toggle two"></div>
+              </div>
+            </div>
+            <div class="yearly">
+              <p class="label">Yearly Billing</p>
+              <p class="discount">-25%</p>
+            </div>
+          </div>
+        </section>
+        <div id="spacer"></div>
+        <section id="features">
+          <div class="features-wrapper">
+            <div id="feature-one">
+              <img src="images/icon-check.svg" alt="#" />
+              <p>Unlimited websites</p>
+            </div>
+            <div id="feature-two">
+              <img src="images/icon-check.svg" alt="#" />
+              <p>100% data ownership</p>
+            </div>
+            <div id="feature-three">
+              <img src="images/icon-check.svg" alt="#" />
+              <p>Email reports</p>
+            </div>
+          </div>
+          <button>Start my trial</button>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

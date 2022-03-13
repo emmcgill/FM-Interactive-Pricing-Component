@@ -1,0 +1,419 @@
+:root {
+    --clr-top-bg: #f1f5fe;
+    --clr-bottom-bg: #f9faff;
+    --clr-btn-bg: #293356;
+    --clr-btn-color: #becdff;
+    --clr-discount-bg: #feede8;
+    --clr-discount-txt: #ff8d68;
+    --clr-gray: #848ead;
+    --clr-range-main: #10d8c4;
+    --clr-range-arrows: #80fff3;
+    --clr-range-bg-filled: #a4f3eb;
+    --clr-range-bg-unfilled: #ecf0fb;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Manrope', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background-color: var(--clr-bottom-bg);
+}
+
+body > #background {
+    position: absolute;
+    z-index: -1;
+    width: 100vw;
+    height: 50%;
+    background-color: var(--clr-top-bg);
+    border-radius: 0 0 0 120px;
+
+}
+
+body > main {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 375px;
+}
+
+body > main > * {
+    width: 326px;
+}
+
+
+body > main > .component-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(images/pattern-circles.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 140px;
+    margin-bottom: 1.75rem;
+}
+
+body > main > .component-title > h1 {
+    color: var(--clr-btn-bg);
+    font-size: 20px;
+    margin-bottom: .25rem;
+}
+
+body > main > .component-title > p {
+    color: var(--clr-gray);
+    text-align: center;
+    font-size: 13.5px;
+    line-height: 1.35rem;
+    max-width: 180px;
+}
+
+body > main > .component {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow:
+    1px 2.8px 2.2px rgba(0, 0, 0, 0),
+    2.5px 6.7px 5.3px rgba(0, 0, 0, 0),
+    4.6px 12.5px 10px rgba(0, 0, 0, 0.002),
+    8.3px 22.3px 17.9px rgba(0, 0, 0, 0.007),
+    15.5px 41.8px 33.4px rgba(0, 0, 0, 0.017),
+    37px 100px 80px rgba(0, 0, 0, 0.07)
+  ;
+}
+
+body > main > .component > #pricing {
+    padding-top: 2rem;
+}
+
+body > main > .component > #pricing > * {
+    text-align: center;
+}
+
+body > main > .component > #pricing > #page-views {
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--clr-gray);
+    letter-spacing: .12rem;
+    margin-bottom: 1.25rem;
+}
+
+body > main > .component > #pricing > #page-views > #total {
+    margin-right: 5px;
+}
+
+body > main > .component > #pricing > .range-wrapper {
+    position: relative;
+}
+
+body > main > .component > #pricing > .range-wrapper > .bar {
+    position: absolute;
+    /* Positioning of the unfilled Bar */
+    left: 25px;
+    top: .25px;
+    width: 279px;
+    height: 8px;
+    /* Color etc. */
+    background-color: var(--clr-range-bg-unfilled);
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    z-index: 1;
+}
+
+body > main > .component > #pricing > .range-wrapper > .bar > .fill  {
+    display: block;
+    width: 0%;
+    height: 100%;
+    background-color: var(--clr-range-bg-filled);
+}
+
+/*********** Baseline, reset styles ***********/
+body > main > .component > #pricing > .range-wrapper > #slider {
+    appearance: none; 
+    width: 279px;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    height: 8px;
+    background-color: transparent;
+    position: relative;
+    z-index: 2;
+  }
+  
+  /* slider thumb */
+  body > main > .component > #pricing > .range-wrapper > #slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    margin-top: -13.5px; /* Centers thumb on the track */
+    background-color: #63d5c3;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    background-image: url(/images/icon-slider.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+  }
+  
+  body > main > .component > #pricing > .range-wrapper > #slider:focus::-webkit-slider-thumb {
+    outline: 3px solid #63d5c3;
+    outline-offset: 0.125rem;
+  }
+  
+  /*********** Firefox styles ***********/
+  
+  /* slider thumb */
+  body > main > .component > #pricing >  .range-wrapper > #slider::-moz-range-thumb {
+    background-color: #63d5c3;
+    border: none; /*Removes extra border that FF applies*/
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    background-image: url(/images/icon-slider.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    box-shadow: 0px 10px 15px rgb(16, 216, 196, .4);
+  }
+
+  body > main > .component > #pricing >  .range-wrapper > #slider:active::-moz-range-thumb{
+    background-color: #24aea1;
+}
+  
+
+body > main > .component > #pricing > #monthly-amount > span {
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--clr-btn-bg);
+}
+
+body > main > .component > #pricing >  #monthly-amount > #amount {
+    margin-right: 5px;
+}
+
+body > main > .component > #pricing >  #monthly-amount {
+    color: var(--clr-gray);
+    font-size: 14px;
+    margin-bottom: 2.5rem;
+}
+
+body > main > .component > #pricing > .billing {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 10px;
+    gap: 10px;
+    margin-bottom: 2rem;
+}
+
+body > main > .component > #pricing > .billing > .monthly > .toggle-container {
+    height: 22px;
+    width: 43px;
+    background-color: #cfd8ef;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4px;
+    
+}
+
+body > main > .component > #pricing > .billing > .monthly > .toggle-container:hover {
+    cursor: pointer;
+    background-color: #7aeadf;
+}
+
+body > main > .component > #pricing > .billing > .monthly > .toggle-container > .toggle {
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+}
+
+body > main > .component > #pricing > .billing > .monthly > .toggle-container > .checked {
+    background-color: #fff;
+}
+
+body > main > .component > #pricing > .billing > * {
+    display: flex;
+    gap: 3.5px;
+}
+
+body > main > .component > #pricing > .billing > * > .label {
+    font-size: 12px;
+    color: var(--clr-gray);
+    letter-spacing: 1px;
+} 
+
+body > main > .component > #pricing > .billing > .yearly > .discount {
+    background-color: var(--clr-discount-bg);
+    color: var(--clr-discount-txt);
+    border-radius: 20px;
+    height: 19px;
+    width: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+body > main > .component > #features {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+body > main > .component >  #spacer {
+    height: 1px;
+    width: 100%;
+    background-color: var(--clr-range-bg-unfilled);
+    margin-bottom: 1.5rem;
+}
+
+body > main > .component > #features > .features-wrapper {
+    text-align: center;
+}
+
+body > main > .component > #features > .features-wrapper > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .75rem;
+    margin-bottom: .75rem;
+
+}
+
+body > main > .component > #features > .features-wrapper > * > img {
+    height: 5.04px;
+    width: 6.95px;
+}
+
+body > main > .component > #features > .features-wrapper > * > p {
+    font-size: 12px;
+}
+
+body > main > .component > #features > .features-wrapper > #feature-three {
+    margin-bottom: 2rem;
+}
+
+body > main > .component > #features > button {
+    background-color: var(--clr-btn-bg);
+    color: var(--clr-btn-color);
+    border: none;
+    height: 41px;
+    width: 150px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 2rem;
+}
+
+body > main > .component > #features > button:hover {
+    cursor: pointer;
+}
+
+@media (min-width: 1440px) {
+    body > main {
+        max-width: 100%;
+    }
+
+    body > main > .component-title {
+        background-size: 37%;
+        height: 145px;
+        margin-bottom: 2.5rem;
+        width: 395px;
+    }
+
+    body > main > .component-title > h1 {
+        font-size: 28px;
+        margin-bottom: .75rem;
+    }
+    
+    body > main > .component-title > p {
+        font-size: 15px;
+        max-width: none;
+    }
+
+    body > main > .component {
+        width: 540px;
+    }
+
+    body > main > .component > #pricing {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "page-views monthly"
+                             "slider slider"
+                             "billing billing";
+        row-gap: 2rem;
+    }
+
+    body > main > .component > #pricing > #page-views {
+        grid-area: page-views;
+        display: flex;
+        align-items: center;
+        margin-bottom: 0;
+        margin-left: 19%;
+    }
+
+    body > main > .component > #pricing > .range-wrapper {
+        grid-area: slider;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    body > main > .component > #pricing > #monthly-amount {
+        grid-area: monthly;
+        margin-bottom: 0;
+    }
+
+    body > main > .component > #pricing > .billing {
+        grid-area: billing;
+        margin-right: 7%;
+        margin-bottom: 2.5rem;
+        gap: 15px;
+    }
+
+    body > main > .component > #pricing > .billing > * > p {
+        margin-right: .75rem;
+    }
+
+    body > main > .component > #pricing > .range-wrapper > .bar  {
+        width: 444px;
+        left: 49.5px;
+        top: .25px;
+    }
+
+    body > main > .component > #pricing > .range-wrapper > #slider {
+        width: 444px;
+    }
+
+    body > main > .component > #features {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 3rem;
+    }
+
+    body > main > .component > #features > button {
+        width: 170px;
+        border-radius: 50px;
+    }
+
+    body > main > .component > #spacer {
+        margin-bottom: 2.5rem;
+    }
+
+    body > #background {
+        height: 55%;
+        border-radius: 0 0 0 140px;
+    
+    }
+
+
+}
